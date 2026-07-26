@@ -1,0 +1,148 @@
+══════════════════════════════════════════════
+            Spring Framework Basics
+══════════════════════════════════════════════
+
+🎯 Definition
+────────────────────────────────────
+Spring Framework is an open-source Java framework used to build
+enterprise applications easily by providing features like IoC,
+Dependency Injection, AOP, MVC, Security, etc.
+
+────────────────────────────────────
+⭐ Why Spring?
+────────────────────────────────────
+✔ Reduces boilerplate code
+✔ Promotes Loose Coupling
+✔ Easy Testing
+✔ Better Maintenance
+✔ Modular Architecture
+✔ Faster Development
+
+────────────────────────────────────
+📌 What is a Framework?
+────────────────────────────────────
+A framework is a collection of predefined classes, interfaces,
+libraries and tools that helps developers build applications
+without writing everything from scratch.
+
+Examples
+• Spring
+• Hibernate
+• Struts
+
+────────────────────────────────────
+🚀 Features of Spring
+────────────────────────────────────
+
+➤ Lightweight
+   • Small in size
+   • Uses only required modules
+
+➤ Modular
+   • Core
+   • Context
+   • JDBC
+   • MVC
+   • Security
+
+➤ POJO Based
+   • Works with normal Java classes
+   • No need to extend Spring classes
+
+Example
+
+```java
+public class Student {
+
+}
+```
+
+➤ Open Source
+   • Free
+   • Community Support
+   • Regular Updates
+
+────────────────────────────────────
+⚡ IoC (Inversion of Control)
+────────────────────────────────────
+Definition:
+IoC is a principle where the responsibility of creating and managing
+objects is given to the Spring Container instead of the programmer.
+
+Without Spring
+
+```java
+Engine e = new Engine();
+```
+
+With Spring
+
+```java
+Engine e = context.getBean(Engine.class);
+```
+
+────────────────────────────────────
+💉 Dependency Injection (DI)
+────────────────────────────────────
+Definition:
+DI is a design pattern used to implement IoC by injecting required
+objects automatically.
+
+Without DI
+
+```java
+class Car{
+    Engine engine = new Engine();
+}
+```
+
+With DI
+
+```java
+class Car{
+
+    private Engine engine;
+
+    Car(Engine engine){
+        this.engine = engine;
+    }
+}
+```
+
+────────────────────────────────────
+🔥 IoC vs DI
+────────────────────────────────────
+
+IoC
+• Principle
+• Controls object creation
+
+DI
+• Design Pattern
+• Injects dependencies
+
+Relationship
+
+IoC
+  │
+  └── Implemented using DI
+
+────────────────────────────────────
+🧠 Interview Points
+────────────────────────────────────
+✔ Spring is an Open Source Java Framework.
+✔ IoC is a Principle.
+✔ DI is a Design Pattern.
+✔ Spring Container manages Beans.
+✔ Bean = Object managed by Spring.
+✔ Spring Boot is built on Spring Framework.
+
+────────────────────────────────────
+📝 Quick Revision
+────────────────────────────────────
+✓ Framework → Reusable Code
+✓ Bean → Managed Object
+✓ Container → Creates Beans
+✓ IoC → Spring controls objects
+✓ DI → Spring injects dependencies
+✓ Loose Coupling → Independent classes
