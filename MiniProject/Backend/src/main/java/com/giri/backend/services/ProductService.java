@@ -17,7 +17,7 @@ public class ProductService {
         return repository.findAll();
     }
 
-    public Product getProductByID(int id) {
+    public Product getProductById(int id) {
         return repository.findById(id).orElse(null);
     }
 
@@ -29,4 +29,38 @@ public class ProductService {
     }
 
 
+    public Product updateProduct(int id,
+                                 Product product,
+                                 MultipartFile imageFile)
+            throws IOException {
+
+        Product existingProduct =
+                repository.findById(id).orElse(null);
+
+        if(existingProduct == null){
+            return null;
+        }
+
+        product.setId(id);
+
+        if(imageFile != null && !imageFile.isEmpty()){
+
+            product.setImageName(imageFile.getOriginalFilename());
+            product.setImageType(imageFile.getContentType());
+            product.setImageData(imageFile.getBytes());
+
+        }else{
+
+            product.setImageName(existingProduct.getImageName());
+            product.setImageType(existingProduct.getImageType());
+            product.setImageData(existingProduct.getImageData());
+
+        }
+
+        return repository.save(product);
+    }
+
+    public void deleteProduct(int id){
+        repository.deleteById(id);
+    }
 }
